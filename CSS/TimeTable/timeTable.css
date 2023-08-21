@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 78, 78);  
+    background-image: url("images.jpeg");  
+    
+    
+}
+
+.inner-div{
+    background-color: rgb(163, 80, 80);
+    color: aliceblue;
+    text-align: center;
+    border: 20px solid rgb(66, 2, 2);
+    text-shadow: 3px 3px 6px red;
+    box-shadow: 15px 15px  3px rgb(199, 133, 121);
+}
+
+table , th, td{
+           border: 2px solid black;
+            border-collapse: collapse;
+            /* margin: 2px 2px 2px 2px; */
+            padding: 12px 7px 12px 5px;
+            text-align: center;
+}
+th{
+    background-color: rgb(218, 20, 20);
+}
+
+.table-main{
+    border: 2px solid black;
+}
+
+.Lunch{
+    background-color: rgb(127, 158, 158);
+}
+
+.project{
+    background-color: rgb(28, 185, 28);
+}
+.rest{
+    background-color: rgb(51, 51, 184);
+}
+.dsa{
+    background-color: rgb(169, 17, 121);
+}
+
+.Online{
+    background-color: rgb(201, 7, 226);
+}
