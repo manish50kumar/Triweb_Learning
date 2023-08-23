@@ -11,12 +11,10 @@
       * Form.css
    * Time-table
        * time-table.html
-       * create a time table using html and inline css
-        
+       * create a time table using html and inline css        
     * TimeTable
         * timeTable.html
         * timeTable.css
-
 ### JavaScript
      * Day1
 
@@ -41,14 +39,11 @@
      * Day11
 
      * Day12
-
 ### Project
     * htmlCssJsProject
-        -index.html
-        -style.css
-        -project.js
-        
-
+        * index.html
+        * style.css
+        * project.js
 ### MYSQL
     * mysql phpMyAdmin.txt
     * mySQL_Workbench_task.sql
