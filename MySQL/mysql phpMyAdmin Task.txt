@@ -114,6 +114,27 @@ Use of JOIN
 
 ---------------------------------------------------------------------------------------------------
 
+DELETE
+   DELETE from teacher;
+
+    Delete -> It only delete the records in table, it cannot reset the auto increament value
+     Truncate - TRUNCATE TABLE classes : It reset the table
+
+    -->  Cannot truncate a table referenced in a foreign key constraint 
+
+-------------------------------------------------------------------------------------------------------
+
+Select command in another way
+    select * from students where class_id <> 6;
+
+---------------------------------------------------------------------------------------------------
+
+ORDER BY keyword
+   select * from students where class_id <> 6 order by class_id;
+   select * from students where class_id <> 6 order by class_id asc;
+   select * from students where class_id <> 6 order by class_id desc;
+-------------------------------------------------------------------------------------------------------
+
 
 
 
