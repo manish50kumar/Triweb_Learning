@@ -67,3 +67,29 @@ ALTER table demo CHANGE id demo_id int(11) NOT null;
 update classes SET class_name="Class Four" where id=4;
 -----------------------------------------------------------------------------------------------
 ->Retrive data
+   ---> select all
+   select * from students;
+   select * from teacher;
+   select * from classes;
+
+   ---> select with where
+   SELECT * from students WHERE class_id=3;
+   
+   ----> Select with and
+   select * from students where class_id = 2 and mobile=8787878783;
+
+   ----> Select with or
+   select * from students where class_id = 2 or mobile=8787878783;
+   
+   ----> IN query
+   SELECT * FROM `students` WHERE class_id IN (2,3);
+
+  ----> select with custome fields
+  SELECT student_name FROM `students` WHERE id = 1;
+  SELECT student_name , mobile FROM `students` WHERE id = 1;
+
+
+------------------------------------------------------------------------------------------
+
+  
+  
