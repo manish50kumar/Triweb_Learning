@@ -62,4 +62,8 @@ ALTER table demo CHANGE id demo_id int(11) NOT null;
    INSERT into students(id,student_name,class_id,mobile) VALUES(4,'Debjit',3,'8787878784');
    INSERT into students(id,student_name,class_id,mobile) VALUES(5,'Harsh',3,'8787878785');
    INSERT into students(id,student_name,class_id,mobile) VALUES(6,'Aditya',2,'8787878786');
-
+------------------------------------------------------------------------------------------------
+->Update a row data
+update classes SET class_name="Class Four" where id=4;
+-----------------------------------------------------------------------------------------------
+->Retrive data
