@@ -91,5 +91,18 @@ update classes SET class_name="Class Four" where id=4;
 
 ------------------------------------------------------------------------------------------
 
+How to change name of column while fetching the data- Alias
+SELECT student_name as NameOfStudent,mobile as MobileNumber FROM `students` WHERE id = 1;
+
+-----------------------------------------------------------------------------------------------
+
+- How to create object of table
+   select st.* FROM students st where id = 2;
+   select st.student_name FROM students st where st.id = 2;
+
+-----------------------------------------------------------------------------------------------
+
+
+
   
   
