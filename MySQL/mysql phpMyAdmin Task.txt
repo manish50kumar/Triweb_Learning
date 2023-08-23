@@ -102,6 +102,24 @@ SELECT student_name as NameOfStudent,mobile as MobileNumber FROM `students` WHER
 
 -----------------------------------------------------------------------------------------------
 
+Use of JOIN
+    select st.student_name,cl.class_name FROM students st INNER JOIN classes cl ON st.class_id = cl.id 
+     where st.id = 2;
+
+    select st.student_name,cl.class_name FROM students st INNER JOIN classes cl ON st.class_id = cl.id ;
+    
+    select st.student_name,cl.class_name, t.teacher_name as ClassTeacher FROM students st 
+     INNER JOIN classes cl ON st.class_id = cl.id 
+     INNER JOIN teacher t on cl.teacher_id = t.id;
+
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+ 
 
 
   
