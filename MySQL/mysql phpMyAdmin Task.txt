@@ -1,0 +1,65 @@
+MySql Task on PhpMyAdmin mysql
+----------------------------------------------------------
+-> Create a Databses
+CREATE DATABASE mysql_phpmyadmin;
+use mysql_phpmyadmin;
+-----------------------------------------------------------
+-> Create Tables
+
+create TABLE teacher(
+id int(11) NOT null AUTO_INCREMENT PRIMARY KEY, 
+teacher_name varchar(255) NOT null,
+mobile varchar(100) NOT null    
+)
+
+
+CREATE TABLE classes(
+id int(11) not null AUTO_INCREMENT,
+class_name varchar(100) not null,
+teacher_id int(11) NOT null,
+PRIMARY KEY(id),
+FOREIGN KEY(teacher_id) REFERENCES teacher(id)   
+)
+
+CREATE TABLE students(
+id int not null AUTO_INCREMENT,
+student_name varchar(100) not null,
+mobile varchar(20) default 0,
+class_id int NOT null,
+PRIMARY KEY(id),
+FOREIGN KEY(class_id) REFERENCES classes(id)   
+)
+
+-> create a demo table from perform more another operation
+
+create table demo(id int(10),name varchar(20),email varchar(20),mobile int(12));
+
+----------------------------------------------------------------------
+-> change column name in tables
+ALTER table demo CHANGE id demo_id int(11) NOT null;
+------------------------------------------------------------------------
+->delete a table
+   drop table demo;
+-------------------------------------------------------------------------
+-> insert data into tables
+   ---> Teacher table
+   INSERT INTO teacher(mobile, teacher_name) VALUES('9898989898','Ravi');
+   INSERT INTO teacher(mobile, teacher_name) VALUES('9898989897','Rakesh');
+   INSERT INTO teacher(mobile, teacher_name) VALUES('9898989896','Mohan');
+   INSERT INTO teacher(mobile, teacher_name) VALUES('9898989895','Amit');
+
+  ---> Class table
+   INSERT into classes(class_name,teacher_id) VALUES('Class One',1);
+   INSERT into classes(class_name,teacher_id) VALUES('Class Two',2);
+   INSERT into classes(class_name,teacher_id) VALUES('Class Three',1);
+   INSERT into classes(class_name,teacher_id) VALUES('Class Four',3);
+    INSERT into classes(class_name,teacher_id) VALUES('Class Five',3);
+
+   ---> Student table
+   INSERT into students(id,student_name,class_id,mobile) VALUES(1,'Akarsh',2,'8787878781');
+   INSERT into students(id,student_name,class_id,mobile) VALUES(2,'DJY',1,'8787878782');
+   INSERT into students(id,student_name,class_id,mobile) VALUES(3,'Kush',2,'8787878783');
+   INSERT into students(id,student_name,class_id,mobile) VALUES(4,'Debjit',3,'8787878784');
+   INSERT into students(id,student_name,class_id,mobile) VALUES(5,'Harsh',3,'8787878785');
+   INSERT into students(id,student_name,class_id,mobile) VALUES(6,'Aditya',2,'8787878786');
+
