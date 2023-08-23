@@ -7,15 +7,15 @@
         Create a normal Registration form using HTML
 ### CSS
    * Form
-      -Form.html
-      -Form.css
+      * Form.html
+      * Form.css
    * Time-table
-       -time-table.html
-        create a time table using html and inline css
+       * time-table.html
+       * create a time table using html and inline css
         
     * TimeTable
-        -timeTable.html
-        -timeTable.css
+        * timeTable.html
+        * timeTable.css
 
 ### JavaScript
      * Day1
@@ -50,13 +50,13 @@
         
 
 ### MYSQL
-    -mysql phpMyAdmin.txt
-    -mySQL_Workbench_task.sql
-    implement all sql code
-       -create table
-       -Insert value
-       -select command
-       -update
-       -Order by
-       -SQL Aggregate Functions
+    * mysql phpMyAdmin.txt
+    * mySQL_Workbench_task.sql
+    * implement all sql code
+       * create table
+       * Insert value
+       * select command
+       * update
+       * Order by
+       * SQL Aggregate Functions
    
