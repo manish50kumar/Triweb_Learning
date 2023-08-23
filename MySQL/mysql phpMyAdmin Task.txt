@@ -135,6 +135,45 @@ ORDER BY keyword
    select * from students where class_id <> 6 order by class_id desc;
 -------------------------------------------------------------------------------------------------------
 
+    SQL Aggregate Functions
+
+    ------>  create a demo table (demo_teacher)
+     create TABLE demo_teacher(
+     id int(11) NOT null AUTO_INCREMENT PRIMARY KEY, 
+     teacher_name varchar(255) NOT null,
+     mobile varchar(100) NOT null,
+     salary int (15) NOT null 
+     )
+
+   ---> insert value
+   
+   INSERT INTO demo_teacher(mobile, teacher_name,salary) VALUES('9898989898','Ravi',50000);
+    INSERT INTO demo_teacher(mobile, teacher_name,salary) VALUES('9898989892','Rajiv',50000);
+   INSERT INTO demo_teacher(mobile, teacher_name,salary) VALUES('9898989897','Rakesh',54000);
+   INSERT INTO demo_teacher(mobile, teacher_name,salary) VALUES('9898989896','Mohan',45000);
+   INSERT INTO demo_teacher(mobile, teacher_name,salary) VALUES('9898989895','Amit',51000);
+
+ --------------------------------------------------------------------------------------------
+   
+    1. ---> COUNT
+    SELECT COUNT(*) as total_row FROM demo_teacher;  
+
+---------------------------------------------------------------------------------------------------
+    2. ---> SUM
+    SELECT SUM(salary) as total_Salary FROM demo_teacher; 
+------------------------------------------------------------------------------------------------
+   3. ---> AVG  (for average calculate)
+    SELECT AVG(salary) as Average_Salary FROM demo_teacher;  
+
+----------------------------------------------------------------------------------------------------------
+  4. ---> MAX 
+   SELECT MAX(salary) as MAX_Salary FROM demo_teacher;  
+-----------------------------------------------------------------------------------------------
+
+   5. MIN 
+   SELECT MIN(salary) as MIN_Salary FROM demo_teacher; 
+
+----------------------------------------------------------------------------------------------------
 
 
 
