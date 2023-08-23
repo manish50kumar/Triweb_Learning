@@ -2,8 +2,8 @@
 3 months MERN internship program 
 
 HTML
-    *Form
-        -Form.html
+    Form
+        Form.html
         Create a normal Registration form using HTML
 CSS
    *Form
