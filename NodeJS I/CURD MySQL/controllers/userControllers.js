@@ -7,7 +7,7 @@ module.exports.register = async (req, res) => {
         res.send({ status: "success", data: { id: insertId } });
     }
     else {
-        res.send({ status: "success", message:"user not registered" });
+        res.send({ status: "error", message:"user not registered" });
     }
 }
 
@@ -17,7 +17,7 @@ module.exports.get = async (req, res) => {
         res.send({status:"success" ,data:getData})
     }
     else {
-        res.send({ status: "success", message: "can not get details" });
+        res.send({ status: "error", message: "can not get details" });
     }
 }
 
@@ -28,8 +28,20 @@ module.exports.update = async (req, res) => {
         res.send({status:"success" ,message:"update successfully"})
     }
     else {
-        res.send({ status: "success", message: "can not update" });
+        res.send({ status: "error", message: "can not update" });
     }
 }
 
+
+
+
+module.exports.delete = async (req, res) => {
+    let deleteData = await userModel.delete(req.body);
+    if (deleteData) {
+        res.send({status:"success" ,message:"Delete Data successfully"})
+    }
+    else {
+        res.send({ status: "error", message: "can not Delete Data" });
+    }
+}
 

@@ -11,4 +11,7 @@ router.post('/get', userControllers.get);
 // /user/update   [to update password]
 router.post('/update', userControllers.update);
 
+// /user/delete   [to delete Data]
+router.post('/delete', userControllers.delete);
+
 module.exports = router;

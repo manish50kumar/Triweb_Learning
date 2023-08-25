@@ -39,3 +39,15 @@ module.exports.update = async (userData) => {
         return false;
     }
 }
+
+module.exports.delete = async (userData) => {
+    try {
+        let query = "DELETE FROM `users` WHERE `id`=?";
+        let result = await db.execute(query, [userData.id]);
+        return true;
+    }
+    catch (error) {
+        console.log("Error in Delete Data", error);
+        return false;
+    }
+}
