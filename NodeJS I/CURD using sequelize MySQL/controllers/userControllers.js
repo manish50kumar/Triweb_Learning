@@ -1,47 +1,50 @@
+const userModel = require('../models/userModels');
 
-const userModel = require("../models/userModels");
-
+//register
 module.exports.register = async (req, res) => {
-    let insertId = await userModel.insert(req.body);
-    if (insertId > 0) {
-        res.send({ status: "success", data: { id: insertId } });
+
+    try {
+        let result = await userModel.create(req.body);
+        res.send({status:"success", data:{id:result.dataValues.id}});
+    } catch (error) {
+        res.send({status:"error", message:"User registration failed"});
     }
-    else {
-        res.send({ status: "error", message:"user not registered" });
-    }
+
 }
 
+//get
 module.exports.get = async (req, res) => {
-    let getData = await userModel.get(req.body);
-    if (getData) {
-        res.send({status:"success" ,data:getData})
-    }
-    else {
-        res.send({ status: "error", message: "can not get details" });
+
+    try {
+        let data = await userModel.findByPk(req.body.id);
+        res.send({status:"success", data:data});
+    } catch (error) {
+        res.send({status:"error", message:"User not found"});
     }
 }
 
-
+//update
 module.exports.update = async (req, res) => {
-    let updatePassword = await userModel.update(req.body);
-    if (updatePassword) {
-        res.send({status:"success" ,message:"update successfully"})
-    }
-    else {
-        res.send({ status: "error", message: "can not update" });
+
+    try {
+        let user = await userModel.findByPk(req.body.id);
+        user.password = req.body.password;
+        await user.save();
+        res.send({status:"success", message:"User data updated"});
+    } catch (error) {
+        //log
+        res.send({status:"error", message:"User not updated"});
     }
 }
 
-
-
-
+//delete
 module.exports.delete = async (req, res) => {
-    let deleteData = await userModel.delete(req.body);
-    if (deleteData) {
-        res.send({status:"success" ,message:"Delete Data successfully"})
-    }
-    else {
-        res.send({ status: "error", message: "can not Delete Data" });
+    
+    try {
+        let user = await userModel.findByPk(req.body.id);
+        await user.destroy();
+        res.send({status:"success", message:"User deleted!"});
+    } catch (error) {
+        res.send({status:"error", message:"User not deleted"});
     }
 }
-
