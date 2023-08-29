@@ -32,3 +32,126 @@ db.mydbs.deleteMany({mobile:9898989898})
 db.mydbs.deleteMany({})
   ---> delete all Data
 
+// Aggregation
+
+db.books.insertMany([
+  { bname: "LetUsC", price: 201 },
+  { bname: "DBMS", price: 500 },
+  { bname: "OS", price: 1000,  }
+]);
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64edefce29577f85c8828dd6"),
+    '1': ObjectId("64edefce29577f85c8828dd7"),
+    '2': ObjectId("64edefce29577f85c8828dd8")
+  }
+}
+
+
+db.mydbs.updateOne({_id: ObjectId("64edea0d29577f85c8828dd5")},{$set:{favBooks:[ ObjectId("64edefce29577f85c8828dd6"),
+     ObjectId("64edefce29577f85c8828dd7"),
+     ObjectId("64edefce29577f85c8828dd8")]}})
+
+       {
+         acknowledged: true,
+         insertedId: null,
+          matchedCount: 1,
+          modifiedCount: 1,
+         upsertedCount: 0
+      }
+
+
+/// aggregate function
+db.mydbs.aggregate([{$lookup:{from:"books",localField:"favBooks",foreignField:"_id",as:"favBooksDetails"}}])
+
+{
+  _id: ObjectId("64ede82d29577f85c8828dd2"),
+  name: 'Aditya',
+  mobile: 98989898576,
+  favBooksDetails: []
+}
+{
+  _id: ObjectId("64edea0d29577f85c8828dd3"),
+  name: 'Aditya',
+  mobile: 98989898576,
+  favBooksDetails: []
+}
+{
+  _id: ObjectId("64edea0d29577f85c8828dd4"),
+  name: 'Kush',
+  mobile: 9898989891,
+  favBooksDetails: []
+}
+{
+  _id: ObjectId("64edea0d29577f85c8828dd5"),
+  name: 'Ravi',
+  mobile: 4444444,
+  email: 'ravi@gmail.com',
+  favBooks: [
+    ObjectId("64edefce29577f85c8828dd6"),
+    ObjectId("64edefce29577f85c8828dd7"),
+    ObjectId("64edefce29577f85c8828dd8")
+  ],
+  favBooksDetails: [
+    {
+      _id: ObjectId("64edefce29577f85c8828dd7"),
+      bname: 'DBMS',
+      price: 500
+    },
+    {
+      _id: ObjectId("64edefce29577f85c8828dd8"),
+      bname: 'OS',
+      price: 1000
+    },
+    {
+      _id: ObjectId("64edefce29577f85c8828dd6"),
+      bname: 'LetUsC',
+      price: 201
+    }
+  ]
+}
+
+
+
+// Validation Implementation
+db.createCollection('products',{validator:{$jsonSchema:
+{
+bsonType:'object',
+required:['title','pname','owner','comments'],
+properties:{
+   title:{
+         bsonType:'string',
+         description:'Title must be string'
+    },
+    pname:{
+          bsonType:'string',
+          description:'pname must be string'
+    },
+    owner:{
+          bsonType:'objectId',
+          description:'id of customer',
+     },
+     comments:{
+		        bsonType:'string',
+            description:'comments must be string'
+      }
+}
+
+}}})
+
+
+db.products.insertOne({title:"my Product",pname:"Product1001",owner:ObjectId("64edea0d29577f85c8828dd5"),comments:"Owner Ravi"})
+
+{
+  acknowledged: true,
+  insertedId: ObjectId("64edf77729577f85c8828dd9")
+}
+
+
+
+
+
+
+
