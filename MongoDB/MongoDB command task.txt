@@ -151,6 +151,14 @@ db.products.insertOne({title:"my Product",pname:"Product1001",owner:ObjectId("64
 
 
 
+////[ In ] and [ not In ]
+
+db.books.find()
+
+db.books.find({price:{$in:[201,1000]}})
+
+db.books.find({price:{$nin:[201,1000]}})
+
 
 
 
