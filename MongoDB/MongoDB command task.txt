@@ -1,0 +1,34 @@
+db.mydbs.insert({name:"Manish",mobile:9898989898})
+db.mydbs.insertOne({name:"Manish",mobile:9898989898})
+db.mydbs.insertOne({name:"Aditya",mobile:98989898576})
+db.mydbs.insertMany([
+  { name: "Aditya", mobile: 98989898576 },
+  { name: "Kush", mobile: 9898989891 },
+  { name: "Ravi", mobile: 9898989892, email: "ravi@gmail.com" }
+]);
+
+show dbs;
+
+db.mydbs.find()
+db.mydbs.find({name:"Ravi"})
+
+
+db.mydbs.updateOne({name:"Ravi"},{$set:{mobile:4444444}})
+     {
+      acknowledged: true,
+      insertedId: null,
+       matchedCount: 1,
+       modifiedCount: 1,
+       upsertedCount: 0
+      }
+
+db.mydbs.deleteOne({name:"Manish"})
+   {
+     acknowledged: true,
+      deletedCount: 1
+    }
+db.mydbs.deleteMany({mobile:9898989898})
+
+db.mydbs.deleteMany({})
+  ---> delete all Data
+
