@@ -41,4 +41,18 @@ const checkTypesAndInterface = (req: Request, res: Response) => {
     res.send(result);
 }
 
+
+interface Student {
+    name: String,
+    age:Number    
+}
+
+interface Student {  // Merge Interface
+    level:String   
+}
+
+const mergeInterface = (req: Request, res: Response)=>{
+    const manish: Student = { name: "Manish", age: 22 ,level:"B.tech"};
+}
+
 export { registerUser ,checkTypesAndInterface};
