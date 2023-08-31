@@ -55,4 +55,32 @@ const mergeInterface = (req: Request, res: Response)=>{
     const manish: Student = { name: "Manish", age: 22 ,level:"B.tech"};
 }
 
+
+class Employee{
+    ename: String;
+    salary: Number;
+    constructor(name: String, salary:Number){
+        this.ename = name;
+        this.salary = salary;
+    }
+}
+
+class EmployeeWithAge extends Employee {
+    age: Number = 0;
+}
+
+
+// const relatedToClass = (req: Request, res: Response) => {
+//     const Manish = new Employee("Manish", 2000000);
+//     Manish.salary = 3000000;
+//     Manish.age = 22; // we can't add new value without Extends Class
+// }
+
+
+const relatedToClass = (req: Request, res: Response) => {
+    const Manish = new EmployeeWithAge("Manish", 2000000);
+    Manish.salary = 3000000;
+    Manish.age = 22; // we can add new value with Extends Class
+}
+
 export { registerUser ,checkTypesAndInterface};
