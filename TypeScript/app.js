@@ -2,11 +2,14 @@ const express = require('express');
 
 const app = express();
 
+const userRoute = require("./routes/userRoute");
+
 app.get('/', (req, res) => {
     res.send("Hii from Server...");
 })
-app.get('/hello', (req, res) => {
-    res.send("Hii Hello from Server site...");
-})
 
-app.listen(3000);
+app.use('/user', userRoute);
+
+
+
+app.listen(process.env.PORT);
