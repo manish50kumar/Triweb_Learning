@@ -1,5 +1,6 @@
 // send/receive data to/from model
 import { Request, Response, NextFunction } from 'express';
+import bcrypt from 'bcryptjs';
 
 import User from "../models/userModel";
 
@@ -13,7 +14,21 @@ const registerUser = async (req: Request, res: Response) => {
     // console.log(req.body);  // to model
     let resp: ReturnResponse;
     try {
-        const user = new User(req.body);
+        // const user = new User(req.body);
+        // const name = req.body.name;
+        // const email = req.body.email;
+        // const passwordFromReq = req.body.password;
+
+        // // let data = 'stackabuse.com';
+        // // let buff = Buffer.from(passwordFromReq);
+        // // let password = buff.toString('base64');
+
+
+        const name = req.body.name;
+        const email = req.body.email;
+        const password = await bcrypt.hash(req.body.password,12);
+
+        const user = new User({name,email,password});
         const result = await user.save();
 
         if (!result) {
@@ -22,7 +37,7 @@ const registerUser = async (req: Request, res: Response) => {
         }
         else {
             resp = { status: "success", message: " result found", data: {userId:result._id} };
-         res.send("Registration Done!!")
+            res.send(resp);
        }
     }
     catch (error) {

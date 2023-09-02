@@ -1,12 +1,8 @@
 import express from 'express';
 
-
 import userRoute from './routes/userRoute';
 
-
 const app = express();
-
-
 
 app.use(express.json());
 
@@ -16,13 +12,43 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRoute);
 
+import { Schema, model, connect } from 'mongoose';
+run().catch(err => console.log("ERROR in connection",err));
+
+const connectionString = process.env.CONNECTION_STRING || "";
+const port = process.env.PORT ;
+
+async function run() {
+    // 4. Connect to MongoDB
+  // let connection = await connect(connectionString);
+  let connection = await connect('mongodb://127.0.0.1:27017/quizApp');
+
+
+  console.log("Connection successfull"); 
+  if (connection) {    
+    app.listen(port, () => {
+      console.log(`App run on Port ${port}`);
+    });
+    
+  }
+  else {
+    console.log("Not run app");
+  }
+}
+
+
+
+
+
+
+
 
 //------------------------------------------------------------------------------------
 
 // connect to database with typescript
 // link : https://mongoosejs.com/docs/typescript.html
 
-import { Schema, model, connect } from 'mongoose';  // its required to import
+// import { Schema, model, connect } from 'mongoose';  // its required to import
 
 
 // 1. Create an interface representing a document in MongoDB.
@@ -42,31 +68,31 @@ import { Schema, model, connect } from 'mongoose';  // its required to import
 // 3. Create a Model.
 // const User = model<IUser>('User', userSchema);
 
-run().catch(err => console.log(err));
+// // run().catch(err => console.log(err));
 
-async function run() {
-  // 4. Connect to MongoDB
-  let connection = await connect('mongodb://127.0.0.1:27017/quizApp');
+// async function run() {
+//   // 4. Connect to MongoDB
+//   let connection = await connect('mongodb://127.0.0.1:27017/quizApp');
 
-//   const user = new User({
-//     name: 'Bill',
-//     email: 'bill@initech.com',
-//     avatar: 'https://i.imgur.com/dM7Thhn.png'
-//   });
-//   await user.save();
+// //   const user = new User({
+// //     name: 'Bill',
+// //     email: 'bill@initech.com',
+// //     avatar: 'https://i.imgur.com/dM7Thhn.png'
+// //   });
+// //   await user.save();
 
-//   console.log(user.email); // 'bill@initech.com'
-  console.log("Connection successfull"); 
-  if (connection) {
+// //   console.log(user.email); // 'bill@initech.com'
+//   console.log("Connection successfull"); 
+//   if (connection) {
     
-    app.listen(3000);
-    console.log(`App run on Port 3000`);
-  }
-  else {
-    console.log("Not run app");
-  }
-}
+//     app.listen(3000);
+//     console.log(`App run on Port 3000`);
+//   }
+//   else {
+//     console.log("Not run app");
+//   }
+// }
 
 //----------------------------------------------------------------------------------------
 
-// app.listen(4000);
+// app.listen(3000);
