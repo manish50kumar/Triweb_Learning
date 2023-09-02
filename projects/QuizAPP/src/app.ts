@@ -1,6 +1,7 @@
 import express from 'express';
 
 import userRoute from './routes/userRoute';
+import authRoute from './routes/authRoute';
 
 const app = express();
 
@@ -10,7 +11,11 @@ app.get('/', (req, res) => {
     res.send("Typescript start....")
 })
 
+// Redirect /user to userRoute
 app.use('/user', userRoute);
+
+//Redirect /auth to authRoute
+app.use('/auth', authRoute);
 
 import { Schema, model, connect } from 'mongoose';
 run().catch(err => console.log("ERROR in connection",err));
