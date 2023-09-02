@@ -19,10 +19,18 @@ const getUser = async (req: Request, res: Response) => {
     // console.log("Params : ", req.params);
     // res.send("done!!");
 
+    // console.log("User Id : ",req.userId);
 
     let resp: ReturnResponse;
     try {
         const userId = req.params.userId;
+
+        if (req.userId != req.params.userId) {
+            const err = new Error("You are not authorize to get details");
+            // err.statusCode
+            throw err;
+        }
+
         // const user = await User.findById(userId); 
         const user = await User.findById(userId,{name:1,email:1}); 
         if (!user) {
@@ -34,7 +42,7 @@ const getUser = async (req: Request, res: Response) => {
             res.send(resp);
         }
     }
-    catch (error) {
+    catch(error) {
         resp = { status: "error", message: "Something went wrong!!", data: {} };
         res.send("Something went wrong!!");
     }
@@ -45,7 +53,15 @@ const updateUser = async (req: Request, res: Response) => {
     let resp: ReturnResponse;
     try {
         const userId = req.body._id;
+        
+        if (req.userId != req.body._id) {
+            const err = new Error("You are not authorize to update");
+            // err.statusCode
+            throw err;
+        }
+        
         const user = await User.findById(userId);
+        
 
         if (!user) {
              resp = { status: "error", message: "No result found", data: {} };
@@ -69,4 +85,4 @@ const updateUser = async (req: Request, res: Response) => {
 
 
 
-export { getUser,updateUser };
+export { getUser,updateUser }
