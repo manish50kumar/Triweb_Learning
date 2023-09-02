@@ -105,5 +105,39 @@ const updateUser = async (req: Request, res: Response) => {
 }
 
 
+const loginUser = async (req: Request, res: Response) => {
 
-export { registerUser,getUser,updateUser };
+    let resp: ReturnResponse;
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+
+        const user = await User.findOne({ email });
+        if (!user) {
+             resp = { status: "error", message: "User not exists", data: {} };
+             res.status(400).send(resp); 
+        }
+        else {
+            const status = await bcrypt.compare(password, user.password);
+            if (status) {
+                 resp = { status: "success", message: "Logged In Successfully", data: {  } };
+                  res.status(200).send(resp);
+                // res.send("Login.. Successfull");
+            }
+            else {
+                resp = { status: "error", message: "UserName/password not match-", data: {  } };
+                  res.status(401).send(resp);
+                // res.send("Not Login");
+            }
+        }
+        
+    }
+    catch (error) {
+         resp = { status: "error", message: "Something went wrong!!", data: {} };
+        res.send("Something went wrong!!");   
+    }
+
+}
+
+
+export { registerUser,getUser,updateUser ,loginUser};
