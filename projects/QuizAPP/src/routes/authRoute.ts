@@ -26,7 +26,15 @@ router.post('/', [
                         .catch((err) => {
                             return Promise.reject(err);
                        })
-                }).normalizeEmail()
+                }).normalizeEmail(),
+    body('password').trim().isLength({ min: 8 }).withMessage("Enter Password Atleast 8 char long"),
+    body('confirm_password').trim()
+                            .custom((value, { req }) => {
+                                if (value != req.body.password) {
+                                    return Promise.reject("Confirm Password not match");
+                                }
+                                return true;
+                            })
 ], registerUser);
 
 // POST  /auth/login
