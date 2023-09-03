@@ -6,20 +6,17 @@ import { body } from 'express-validator';
 const router = express.Router();
 
 import {registerUser,loginUser,isEmailExist} from '../controllers/authController';
-import ProjectError from '../helper/error';
+
 
 // POST  /auth
 router.post('/', [
     body('name').trim().not().isEmpty().isLength({ min: 4 }).withMessage("please Enter a Valid Name Minimum 4 char long"),
     body('email').trim().isEmail()
-                .custom(emailId => {
+                .custom((emailId : String) => {
                     return isEmailExist(emailId)
-                        .then((status) => { 
+                        .then((status:Boolean) => { 
                             if (status) {
-                                return Promise.reject("User already exist!!");
-                                // const err = new ProjectError("User already exist!!");
-                                // err.statusCode = 422;
-                                // throw err;
+                                return Promise.reject("User already exist!!");                                
                             }
                             
                         })
@@ -29,7 +26,7 @@ router.post('/', [
                 }).normalizeEmail(),
     body('password').trim().isLength({ min: 8 }).withMessage("Enter Password Atleast 8 char long"),
     body('confirm_password').trim()
-                            .custom((value, { req }) => {
+                            .custom((value:String, { req }) => {
                                 if (value != req.body.password) {
                                     return Promise.reject("Confirm Password not match");
                                 }
