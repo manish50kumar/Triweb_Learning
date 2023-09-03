@@ -13,7 +13,7 @@ interface ReturnResponse{
 
 
 
-const getUser = async (req: Request, res: Response) => {
+const getUser = async (req: Request, res: Response,next:NextFunction) => {
     // console.log("Body : ",req.body);
     // console.log("Query : ", req.query);
     // console.log("Params : ", req.params);
@@ -43,13 +43,14 @@ const getUser = async (req: Request, res: Response) => {
         }
     }
     catch(error) {
-        resp = { status: "error", message: "Something went wrong!!", data: {} };
-        res.send("Something went wrong!!");
+        // resp = { status: "error", message: "Something went wrong!!", data: {} };
+        // res.send("Something went wrong!!");
+        next(error);
     }
     
 }
 
-const updateUser = async (req: Request, res: Response) => {
+const updateUser = async (req: Request, res: Response,next:NextFunction) => {
     let resp: ReturnResponse;
     try {
         const userId = req.body._id;
@@ -75,8 +76,9 @@ const updateUser = async (req: Request, res: Response) => {
         }
     }
     catch (error) {
-        resp = { status: "error", message: "Something went wrong!!", data: {} };
-        res.send("Something went wrong!!");
+        // resp = { status: "error", message: "Something went wrong!!", data: {} };
+        // res.send("Something went wrong!!");
+        next(error);
     }
         
 

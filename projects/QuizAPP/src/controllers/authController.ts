@@ -11,7 +11,7 @@ interface ReturnResponse{
     data:{}
 }
 
-const registerUser = async (req: Request, res: Response) => {
+const registerUser = async (req: Request, res: Response,next:NextFunction) => {
     // console.log(req.body);  // to model
     let resp: ReturnResponse;
     try {
@@ -42,9 +42,10 @@ const registerUser = async (req: Request, res: Response) => {
        }
     }
     catch (error) {
-        // console.log(error);
-        resp = { status: "error", message: "Something went wrong!!", data: {} };
-        res.send("Something went wrong!!");
+        // // console.log(error);
+        // resp = { status: "error", message: "Something went wrong!!", data: {} };
+        // res.send("Something went wrong!!");
+        next(error);
     }
 
     // console.log("Registration done");
@@ -53,7 +54,7 @@ const registerUser = async (req: Request, res: Response) => {
 
 
 
-const loginUser = async (req: Request, res: Response) => {
+const loginUser = async (req: Request, res: Response,next:NextFunction) => {
 
     let resp: ReturnResponse;
     try {
@@ -84,8 +85,9 @@ const loginUser = async (req: Request, res: Response) => {
         
     }
     catch (error) {
-         resp = { status: "error", message: "Something went wrong!!", data: {} };
-        res.send("Something went wrong!!");   
+        //  resp = { status: "error", message: "Something went wrong!!", data: {} };
+        // res.send("Something went wrong!!");  
+        next(error);
     }
 
 }

@@ -1,4 +1,5 @@
 import express from 'express';
+import { Request,Response,NextFunction } from 'express';
 
 import userRoute from './routes/userRoute';
 import authRoute from './routes/authRoute';
@@ -24,6 +25,11 @@ app.use('/user', userRoute);
 
 //Redirect /auth to authRoute
 app.use('/auth', authRoute);
+
+app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
+  console.log(err);
+  res.send("Somthing Went wrong please try after sometime!!");
+})
 
 import { Schema, model, connect } from 'mongoose';
 run().catch(err => console.log("ERROR in connection",err));
