@@ -69,6 +69,13 @@ const updateQuiz = async (req: Request, res: Response,next:NextFunction) => {
             err.statusCode = 403;
             throw err;
         }
+
+        if (quiz.is_published) {
+            const err = new ProjectError("You Can not update pblished Quiz");
+            err.statusCode = 405;
+            throw err;
+        }
+
         quiz.name = req.body.name;
         quiz.questions_list = req.body.questions_list;
         quiz.answers = req.body.answers;
@@ -85,6 +92,25 @@ const updateQuiz = async (req: Request, res: Response,next:NextFunction) => {
 const deleteQuiz =async (req: Request, res: Response,next:NextFunction) => {
     try {
         const quizId = req.params.quizId;
+
+        const quiz = await Quiz.findById(quizId);
+        if (!quiz) {
+            const err = new ProjectError("Quiz not found");
+            err.statusCode = 404;
+            throw err;
+        }
+        if (req.userId !== quiz.created_by.toString()) {
+            const err = new ProjectError("You are not authorized to get Quiz");
+            err.statusCode = 403;
+            throw err;
+        }
+
+        if (quiz.is_published) {
+            const err = new ProjectError("You Can not Delete pblished Quiz");
+            err.statusCode = 405;
+            throw err;
+        }
+
         await Quiz.deleteOne({_id:quizId});
 
         const resp: ReturnResponse = { status: "success", message: "Quiz Deleted successfully", data: {} };
@@ -101,6 +127,11 @@ const pulishQuiz =async (req: Request, res: Response,next:NextFunction) => {
         if (!quiz) {
             const err = new ProjectError("Quiz not found");
             err.statusCode = 404;
+            throw err;
+        }
+        if (quiz.is_published) {
+            const err = new ProjectError("Quiz Already Published");
+            err.statusCode = 405;
             throw err;
         }
         quiz.is_published = true;
