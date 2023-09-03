@@ -3,6 +3,7 @@ import { Request,Response,NextFunction } from 'express';
 
 import userRoute from './routes/userRoute';
 import authRoute from './routes/authRoute';
+import ProjectError from "./helper/error";
 
 const app = express();
 
@@ -26,9 +27,38 @@ app.use('/user', userRoute);
 //Redirect /auth to authRoute
 app.use('/auth', authRoute);
 
-app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
-  console.log(err);
-  res.send("Somthing Went wrong please try after sometime!!");
+interface ReturnResponse {
+  status: "success" | "error",
+  message: String,
+  data: {}|[]
+}
+
+app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
+  let message: String;
+  let statusCode: number;
+  
+  // let resp: ReturnResponse;
+
+  if (!!err.statusCode && err.statusCode < 500) {
+    message = err.message;
+    statusCode = err.statusCode;
+  }
+  else {
+    message = "Somthing Went wrong please try after sometime!!";
+    statusCode = 500;
+  }
+
+  let resp: ReturnResponse={
+    status: "error",
+    message,
+    data:{} 
+  };
+  if (!!err.data) {
+    resp.data = err.data;
+  }
+
+  console.log(err.statusCode,err.message);
+  res.status(statusCode).send(resp);
 })
 
 import { Schema, model, connect } from 'mongoose';

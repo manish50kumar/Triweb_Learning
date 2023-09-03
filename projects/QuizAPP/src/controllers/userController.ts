@@ -1,5 +1,6 @@
 // send/receive data to/from model
 import { Request, Response, NextFunction } from 'express';
+import ProjectError from "../helper/error";
 
 
 import User from "../models/userModel";
@@ -7,7 +8,7 @@ import User from "../models/userModel";
 interface ReturnResponse{
     status: "success" | "error",
     message: String,
-    data:{}
+    data:{} | []
 }
 
 
@@ -26,20 +27,26 @@ const getUser = async (req: Request, res: Response,next:NextFunction) => {
         const userId = req.params.userId;
 
         if (req.userId != req.params.userId) {
-            const err = new Error("You are not authorize to get details");
-            // err.statusCode
+            const err = new ProjectError("You are not authorize to get details");
+            err.statusCode = 401;
+            err.data={"hii":"its Error"}
             throw err;
         }
 
         // const user = await User.findById(userId); 
         const user = await User.findById(userId,{name:1,email:1}); 
         if (!user) {
-             resp = { status: "error", message: "No result found", data: {} };
-            res.send("No result found");
+            const err = new ProjectError("No User found");
+            err.statusCode = 401;
+           
+            throw err;
+
+            //  resp = { status: "error", message: "No result found", data: {} };
+            // res.send("No result found");
         }
         else {
             resp = { status: "success", message: "User Found", data: { user: user } };
-            res.send(resp);
+            res.status(200).send(resp);
         }
     }
     catch(error) {
@@ -56,8 +63,8 @@ const updateUser = async (req: Request, res: Response,next:NextFunction) => {
         const userId = req.body._id;
         
         if (req.userId != req.body._id) {
-            const err = new Error("You are not authorize to update");
-            // err.statusCode
+            const err = new ProjectError("You are not authorize to update");
+            err.statusCode=401
             throw err;
         }
         
@@ -65,8 +72,13 @@ const updateUser = async (req: Request, res: Response,next:NextFunction) => {
         
 
         if (!user) {
-             resp = { status: "error", message: "No result found", data: {} };
-             res.send("No result found");        
+            const err = new ProjectError("No User found");
+            err.statusCode = 401;
+
+            throw err;
+
+            //  resp = { status: "error", message: "No result found", data: {} };
+            // res.send("No result found");
         }
         else {
             user.name = req.body.name;

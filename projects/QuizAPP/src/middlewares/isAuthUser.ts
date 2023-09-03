@@ -2,6 +2,7 @@
 
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
+import ProjectError from "../helper/error";
 
 const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -12,7 +13,11 @@ const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
         const authHeader = req.get('Authorization');
 
         if (!authHeader) {
-            throw new Error("Not authenticated.");
+            const err = new ProjectError("Not authenticated.");
+            err.statusCode = 401;
+
+            throw err;
+            
             // res.status(401).send("Not authenticated.");
         }
 
@@ -32,11 +37,18 @@ const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
         catch (error) {
             // console.log("Error in getuser auth", error);
             // res.send("Error in get user jwt auth user");
-            throw new Error("Not authenticated.");
+            const err = new ProjectError("Not authenticated.");
+            err.statusCode = 401;
+
+            throw err;
+           
         }
 
         if (!decodedToken) {
-            throw new Error("Not authenticated.");
+            const err = new ProjectError("Not authenticated.");
+            err.statusCode = 401;
+
+            throw err;
         }
         // get userId
 

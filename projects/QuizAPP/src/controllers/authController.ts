@@ -4,11 +4,12 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 import User from "../models/userModel";
+import ProjectError from '../helper/error';
 
 interface ReturnResponse{
     status: "success" | "error",
     message: String,
-    data:{}
+    data:{} | []
 }
 
 const registerUser = async (req: Request, res: Response,next:NextFunction) => {
@@ -63,8 +64,13 @@ const loginUser = async (req: Request, res: Response,next:NextFunction) => {
 
         const user = await User.findOne({ email });
         if (!user) {
-             resp = { status: "error", message: "User not exists", data: {} };
-             res.status(400).send(resp); 
+            const err = new ProjectError("User not exists");
+            err.statusCode = 401;
+            // err.data = { "hii": "its Error" }
+            throw err;
+
+            //  resp = { status: "error", message: "User not exists", data: {} };
+            //  res.status(400).send(resp); 
         }
         else {
             const status = await bcrypt.compare(password, user.password);
@@ -77,8 +83,13 @@ const loginUser = async (req: Request, res: Response,next:NextFunction) => {
                 // res.send("Login.. Successfull");
             }
             else {
-                resp = { status: "error", message: "UserName/password not match-", data: {  } };
-                  res.status(401).send(resp);
+                const err = new ProjectError("UserName/password not match");
+                err.statusCode = 401;
+                // err.data = { "hii": "its Error" }
+                throw err;
+
+                // resp = { status: "error", message: "UserName/password not match-", data: {  } };
+                //   res.status(401).send(resp);
                 // res.send("Not Login");
             }
         }
