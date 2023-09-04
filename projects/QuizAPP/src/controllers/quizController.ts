@@ -1,6 +1,8 @@
 // to send/ receive data from model
 
-import { Request, Response,NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
+import { validationResult } from "express-validator";
+
 import Quiz from "../models/quizModel";
 import ProjectError from "../helper/error";
 
@@ -12,6 +14,15 @@ interface ReturnResponse{
 
 const createQuiz = async (req: Request, res:Response, next:NextFunction) => {
     try {
+        const validationError = validationResult(req);
+        if (!validationError.isEmpty()) {
+            const err = new ProjectError("Validation Failed!!");
+            err.statusCode = 422;
+            err.data = validationError.array();
+            throw err;
+        }
+
+
         const created_by = req.userId;
 
         const name = req.body.name;
@@ -56,7 +67,16 @@ const getQuiz = async  (req: Request, res: Response,next:NextFunction) => {
     
 }
 const updateQuiz = async (req: Request, res: Response,next:NextFunction) => { 
-    try {
+    try
+    {
+        const validationError = validationResult(req);
+        if (!validationError.isEmpty()) {
+            const err = new ProjectError("Validation Failed!!");
+            err.statusCode = 422;
+            err.data = validationError.array();
+            throw err;
+        }
+        
         const quizId = req.body._id;
         const quiz = await Quiz.findById(quizId);
         if (!quiz) {
