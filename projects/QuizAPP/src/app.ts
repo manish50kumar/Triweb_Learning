@@ -4,6 +4,7 @@ import { Request,Response,NextFunction } from 'express';
 import userRoute from './routes/userRoute';
 import authRoute from './routes/authRoute';
 import quizRoute from './routes/quizRoute';
+import examRoute from './routes/examRoute';
 import ProjectError from "./helper/error";
 
 
@@ -33,7 +34,8 @@ app.use('/auth', authRoute);
 //Redirect /quiz
 app.use('/quiz', quizRoute);
 
-
+//Redirect /exam
+app.use('/exam', examRoute);
 
 interface ReturnResponse {
   status: "success" | "error",
