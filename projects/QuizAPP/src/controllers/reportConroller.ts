@@ -1,6 +1,7 @@
 
 import Report from "../models/reportModel";
-import { Request, Response, NextFunction } from "express";
+// import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 import ProjectError from "../helper/error";
 
 interface ReturnResponse {
@@ -9,7 +10,12 @@ interface ReturnResponse {
     data: {} | []
 }
 
-const getReport = async (req: Request, res: Response, next: NextFunction) => {
+
+// another method to handle req,res,next
+// when we user RequestHandler the no need to write Request,Response,and NextFunction it autometically handled
+
+// const getReport = async (req: Request, res: Response, next: NextFunction) => {
+const getReport:RequestHandler = async (req, res, next) => {
     
     try {
         let report;
