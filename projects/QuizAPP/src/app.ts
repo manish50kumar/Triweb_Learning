@@ -5,6 +5,7 @@ import userRoute from './routes/userRoute';
 import authRoute from './routes/authRoute';
 import quizRoute from './routes/quizRoute';
 import examRoute from './routes/examRoute';
+import reportRoute from './routes/reportRoute';
 import ProjectError from "./helper/error";
 
 
@@ -36,6 +37,9 @@ app.use('/quiz', quizRoute);
 
 //Redirect /exam
 app.use('/exam', examRoute);
+
+//Redirect /report
+app.use('/report', reportRoute);
 
 interface ReturnResponse {
   status: "success" | "error",

@@ -2,7 +2,7 @@
 import { NextFunction, Request, Response } from "express";
 
 import Quiz from "../models/quizModel";
-import Result from "../models/resultModel";
+import Report from "../models/reportModel";
 import ProjectError from "../helper/error";
 
 interface ReturnResponse {
@@ -67,8 +67,8 @@ const submitExam =async (req: Request, res: Response, next: NextFunction) => {
             }
         }
 
-        const result = new Result({ userId, quizId, score, total });
-        const data = await result.save();
+        const report = new Report({ userId, quizId, score, total });
+        const data = await report.save();
         if (!data) {
             const err = new ProjectError("Data not Saved Successfullly");
             err.statusCode = 404;
