@@ -5,7 +5,7 @@ function FirstComponent(props){
         <div className="modal">
             <h1>{props.owner} Application</h1>
             <p>Its Application for {props.demo}</p>
-            <button onClick={props.closeModal}>Click Here</button>
+            <button onClick={props.closeModal}>Close Modal</button>
         </div>
     )
 }
