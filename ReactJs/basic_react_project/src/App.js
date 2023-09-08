@@ -6,15 +6,15 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Product from './pages/Product';
 
-import MainMenu from './components/layouts/MainMenu'
+
 
 import {Routes, Route } from 'react-router-dom';
-
+import Layout from './components/layouts/Layout';
 
 function App() {
   return (
-    <div >
-      <MainMenu></MainMenu>
+    <Layout >
+      
       <Routes>
           <Route path='/' element={<Home/>}></Route> 
           <Route path='/about' element={<About/>}></Route> 
@@ -23,7 +23,7 @@ function App() {
       </Routes>
       
        
-    </div>
+    </Layout>
   );
 }
 

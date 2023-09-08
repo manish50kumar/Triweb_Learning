@@ -1,9 +1,10 @@
 
 import Styles from './ProductItem.module.css'
+import CustomWrapper from '../layouts/CustomWrapper';
 function ProductItem(props) {
     return (
         <li key={props.item.id}>
-            <div>
+            <CustomWrapper>
                 <div className={Styles.image}>
                     <img src={props.item.image} alt="No Images"></img>
                 </div>
@@ -16,7 +17,7 @@ function ProductItem(props) {
                          <button >Purchase</button>
                 </div>
                
-            </div>
+            </CustomWrapper>
          </li>
     )
 }
