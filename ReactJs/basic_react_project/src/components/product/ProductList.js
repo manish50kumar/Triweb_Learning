@@ -6,9 +6,8 @@ function ProductList(props) {
     return (
         <ul className={Styles.list}>
              {
-                    props.products.map((item) => {
-                        // return <li key={item.id}>{item.product_name}</li>
-                        return <ProductItem key={item.id} item={item} />
+                    props.products.map((item) => {                 
+                        return <ProductItem key={item.id} id={item.id} item={item} />
                     })
                } 
             

@@ -33,12 +33,7 @@ function Product() {
 
     return (
         <div>
-            
-                {/* {
-                    products.map((item) => {
-                        return <li key={item.id}>{item.product_name}</li>;
-                    })
-               }  */}
+    
                 <ProductList products={products}></ProductList>
           
         </div>
