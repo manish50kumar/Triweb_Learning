@@ -30,6 +30,21 @@ app.post('/product', async (req, res) => {
 })
 
 
+app.get('/product', async (req, res) => {
+    try {
+        // console.log(req.body);
+        // console.log("req.body");
+         const products = await Product.find({});
+        // console.log(result);
+        res.send({status:"success",data:products});
+    }
+    catch (error) {
+        console.log(error.message);
+        res.send({ status: "Error", message: error.message });
+    }
+})
+
+
 mongoose.connect(process.env.connectionString, {
         useNewUrlParser: true,
         useUnifiedTopology:true,
