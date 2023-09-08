@@ -1,6 +1,12 @@
 
+
 import AddProductForm from '../components/product/AddProductForm'
+
+import { useNavigate } from 'react-router-dom';
+
 function AddProduct() {
+
+    const navigate = useNavigate();
 
     function addProductHandler(newProduct) {
         // console.log(newProduct);
@@ -10,8 +16,7 @@ function AddProduct() {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(response => response.json())
-            .then(data => console.log(data))
+        }).then(response => navigate('/',{replace:true}))            
             .catch(err => console.log(err));
     }
 
