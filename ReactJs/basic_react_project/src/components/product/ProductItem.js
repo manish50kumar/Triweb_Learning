@@ -1,9 +1,28 @@
 
 import Styles from './ProductItem.module.css'
 import CustomWrapper from '../layouts/CustomWrapper';
+import FavouriteContext from '../../store/ContextFavourite';
+import { useContext } from 'react';
+
 function ProductItem(props) {
+
+    const favouriteContext = useContext(FavouriteContext);
+
+    const isFavourite = favouriteContext.isFavouriteItem(props.item._id);
+
+    const toggleFavourite = () => {
+        if (isFavourite) {
+            favouriteContext.removeFavouriteItem(props.item._id);
+            // console.log("Remove");
+        }
+        else {
+            favouriteContext.addFavouriteItem({ ...props.item });
+            // console.log("add");
+        }
+    }
+
     return (
-        <li key={props.item.id}>
+        <li key={props.item._id}>
             <CustomWrapper>
                 <div className={Styles.image}>
                     <img src={props.item.image} alt="No Images"></img>
@@ -16,7 +35,12 @@ function ProductItem(props) {
                 <div  className={Styles.btn}>
                          <button >Purchase</button>
                 </div>
-               
+                <div>
+                    <button className={
+                        isFavourite ? Styles.heartFvrt : Styles.heartUnfvrt                        
+                    }
+                        onClick={toggleFavourite}></button>
+               </div>
             </CustomWrapper>
          </li>
     )
