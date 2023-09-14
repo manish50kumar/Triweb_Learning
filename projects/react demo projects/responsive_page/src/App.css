@@ -1,0 +1,43 @@
+.h1-tag{
+  text-align: center;
+  background-color: rgb(127, 131, 134);
+}
+
+.grand-parent{
+  background-color: rgb(131, 146, 159);
+  width: 100%;
+  height:fit-content;
+}
+.parent{
+  border: 2px solid red;
+  display: flex;
+  
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.child{
+  border: 5px solid green;
+  width: 40%;
+  height: auto;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  
+}
+img{
+  width: 90%;
+  height: 80%;
+}
+
+.p1{
+  color: wheat;
+}
+
+
+@media (max-width:990px){
+  .parent{
+     flex-direction: column;  
+  }
+}
+
