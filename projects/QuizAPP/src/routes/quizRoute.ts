@@ -25,7 +25,7 @@ router.post('/', isAuthenticated, [
 ], createQuiz);
 
 // get GET -> /quiz/:id
-router.get('/:quizId', isAuthenticated, getQuiz);
+router.get('/:quizId?', isAuthenticated, getQuiz);
 
 //update PUT-> /quiz
 router.put('/', isAuthenticated, [
