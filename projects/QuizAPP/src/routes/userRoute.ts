@@ -16,7 +16,8 @@ import { isAuthenticated } from '../middlewares/isAuthUser';
 // user should be authorize
 
 // GET  /user/:user_id
-router.get('/:userId', isAuthenticated, getUser);
+// router.get('/:userId', isAuthenticated, getUser);
+router.get('/', isAuthenticated, getUser);
 
 
 //add a Middleware

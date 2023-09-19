@@ -23,7 +23,7 @@ router.post('/', [
                         .catch((err) => {
                             return Promise.reject(err);
                        })
-                }).normalizeEmail(),
+                }),
     body('password').trim().isLength({ min: 8 }).withMessage("Enter Password Atleast 8 char long"),
     body('confirm_password').trim()
                             .custom((value:String, { req }) => {

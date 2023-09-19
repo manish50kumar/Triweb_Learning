@@ -91,7 +91,7 @@ const updateQuiz = async (req: Request, res: Response,next:NextFunction) => {
             throw err;
         }
         if (req.userId !== quiz.created_by.toString()) {
-            const err = new ProjectError("You are not authorized to get Quiz");
+            const err = new ProjectError("You are not authorized to update Quiz");
             err.statusCode = 403;
             throw err;
         }

@@ -24,15 +24,16 @@ const getUser = async (req: Request, res: Response,next:NextFunction) => {
 
     let resp: ReturnResponse;
     try {
-        const userId = req.params.userId;
+        // const userId = req.params.userId;
 
-        if (req.userId != req.params.userId) {
-            const err = new ProjectError("You are not authorize to get details");
-            err.statusCode = 401;
-            err.data={"hii":"its Error"}
-            throw err;
-        }
+        // if (req.userId != req.params.userId) {
+        //     const err = new ProjectError("You are not authorize to get details");
+        //     err.statusCode = 401;
+        //     err.data={"hii":"its Error"}
+        //     throw err;
+        // }
 
+        const userId = req.userId;
         // const user = await User.findById(userId); 
         const user = await User.findById(userId,{name:1,email:1}); 
         if (!user) {
