@@ -20,7 +20,6 @@
          * Conditional statement -> if else if and else switch
          * loops -> for   while do while         
 ### Project
-[Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)
     * htmlCssJsProject
         * Create a basic project using HTML CSS and JS
     * QuizAPP
@@ -33,7 +32,8 @@
     * react demo project
         * learn basic react js
     * Portfolio
-        * Build using react js                      
+        * Build using react js 
+   [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)                          
 ### MYSQL
     * mysql phpMyAdmin.txt
     * mySQL_Workbench_task.sql
