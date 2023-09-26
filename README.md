@@ -23,16 +23,16 @@
 ### Project
    * htmlCssJsProject
       * Create a basic project using HTML CSS and JS
-    * QuizAPP
+   * QuizAPP
         * implement a back-end quiz APP 
         * create all work using authenticate user
         * one user create a quiz and anoter user take a quiz
-    * tic-tac-toe
+   * tic-tac-toe
        * implement tic tac toe game using react js
        * implementing multiple functionality like - reset game and see who won the game 
-    * react demo project
+   * react demo project
         * learn basic react js
-    * Portfolio
+   * Portfolio
         * Build using react js 
    [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)                          
 ### MYSQL
