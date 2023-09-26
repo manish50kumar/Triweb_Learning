@@ -20,17 +20,16 @@
          * Conditional statement -> if else if and else switch
          * loops -> for   while do while         
 ### Project
+    [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)
     * htmlCssJsProject
-        * index.html
-        * style.css
-        * project.js
+        * Create a basic project using HTML CSS and JS
     * QuizAPP
         * implement a back-end quiz APP 
         * create all work using authenticate user
         * one user create a quiz and anoter user take a quiz
     * tic-tac-toe
        * implement tic tac toe game using react js
-       * implementing multiple functionality like - reset game and see who won the game         
+       * implementing multiple functionality like - reset game and see who won the game                
 ### MYSQL
     * mysql phpMyAdmin.txt
     * mySQL_Workbench_task.sql
