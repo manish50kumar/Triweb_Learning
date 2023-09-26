@@ -20,7 +20,7 @@
          * Conditional statement -> if else if and else switch
          * loops -> for   while do while         
 ### Project
-    [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)
+[Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)
     * htmlCssJsProject
         * Create a basic project using HTML CSS and JS
     * QuizAPP
