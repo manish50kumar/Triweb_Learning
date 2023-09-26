@@ -3,8 +3,8 @@
 
 ### HTML
    * Form
-        Form.html
-        Create a normal Registration form using HTML
+        * Create a normal Registration form using HTML
+      [Go to html file](https://github.com/manish50kumar/Triweb_Learning/tree/master/HTML/Form)  
 ### CSS
    * Form
       * Form.html
@@ -15,13 +15,14 @@
     * TimeTable
         * timeTable.html
         * timeTable.css
+   [Go to CSS file](https://github.com/manish50kumar/Triweb_Learning/tree/master/CSS)     
 ### JavaScript
-     * All javaScript Basic code in this folder
-         * Conditional statement -> if else if and else switch
-         * loops -> for   while do while         
+   * All javaScript Basic code in this folder
+       * Conditional statement -> if else if and else switch
+       * loops -> for   while do while         
 ### Project
-    * htmlCssJsProject
-        * Create a basic project using HTML CSS and JS
+   * htmlCssJsProject
+      * Create a basic project using HTML CSS and JS
     * QuizAPP
         * implement a back-end quiz APP 
         * create all work using authenticate user
@@ -35,7 +36,7 @@
         * Build using react js 
    [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)                          
 ### MYSQL
-    * mysql phpMyAdmin.txt
+   * mysql phpMyAdmin.txt
     * mySQL_Workbench_task.sql
     * implement all sql code
        * create table
@@ -45,36 +46,36 @@
        * Order by
        * SQL Aggregate Functions
 ### MongoDB
-     * implement all NoSql Commands
-         * create
-         * update
-         * delete
-         * fetch
+   * implement all NoSql Commands
+       * create
+       * update
+       * delete
+       * fetch
 ### ES6
-      * All methods and basic code of es6
-         * Array Methods 
-         * class
-         * loops -> for of loop
-         * promise
-         * set
-         * map
-         * structuring , destructuring
-         * interpolation
-         * string methods
+   * All methods and basic code of es6
+       * Array Methods 
+       * class
+       * loops -> for of loop
+       * promise
+       * set
+       * map
+       * structuring , destructuring
+       * interpolation
+       * string methods
 ### NodeJS 
-      * Implement Basic code of nodejs
-        * basic Calculator
+   * Implement Basic code of nodejs
+       * basic Calculator
            * create a simple calculator to understand flow of nodeJs
-        * CURD MYSQL
+       * CURD MYSQL
             * to perform curd operation using nodejs connect with Mysql and understand how to perform all functionality
-        * CURD Sequelize 
+       * CURD Sequelize 
             * Perform all CURD operation using nodejs with mySQL sequelize operation
 ### TypeScript 
-      * Implement a basic code of typescript and understand how to work typescript 
-         * how to create a route and how to connect routes for flow of code   
+   * Implement a basic code of typescript and understand how to work typescript 
+       * how to create a route and how to connect routes for flow of code   
 ### React JS
-      *  Implement and understand how to write code in react js  
-        * create a small project  and understand to connect with back-end and proform a store data into database  and create a cart to show cart data             
+   *  Implement and understand how to write code in react js  
+      * create a small project  and understand to connect with back-end and proform a store data into database  and create a cart to show cart data             
                
 
    
