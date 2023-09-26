@@ -29,7 +29,11 @@
         * one user create a quiz and anoter user take a quiz
     * tic-tac-toe
        * implement tic tac toe game using react js
-       * implementing multiple functionality like - reset game and see who won the game                
+       * implementing multiple functionality like - reset game and see who won the game 
+    * react demo project
+        * learn basic react js
+    * Portfolio
+        * Build using react js                      
 ### MYSQL
     * mysql phpMyAdmin.txt
     * mySQL_Workbench_task.sql
