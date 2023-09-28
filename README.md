@@ -73,8 +73,9 @@
        * CURD Sequelize 
             * Perform all CURD operation using nodejs with mySQL sequelize operation
 ### TypeScript 
-   * Implement a basic code of typescript and understand how to work typescript 
-       * how to create a route and how to connect routes for flow of code   
+   * basic code of typescript and understand how to work typescript 
+       * how to create a route and how to connect routes for flow of code 
+       * [Go to TypeScript File](https://github.com/manish50kumar/Triweb_Learning/tree/master/TypeScript)  
 ### React JS
    *  Implement and understand how to write code in react js  
       * create a small project  and understand to connect with back-end and proform a store data into database  and create a cart to show cart data   
