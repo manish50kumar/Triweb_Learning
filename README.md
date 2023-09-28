@@ -19,7 +19,9 @@
 ### JavaScript
    * All javaScript Basic code in this folder
        * Conditional statement -> if else if and else switch
-       * loops -> for   while do while         
+       * loops -> for   while do while 
+   * All code in Day wise file for more understanding    
+   * [Go to JavaScript file](https://github.com/manish50kumar/Triweb_Learning/tree/master/JavaScript)             
 ### Project
    * htmlCssJsProject
       * Create a basic project using HTML CSS and JS
@@ -42,16 +44,8 @@
    *  all NoSql Commands       
    * [Go to MongoDB file](https://github.com/manish50kumar/Triweb_Learning/tree/master/MongoDB)    
 ### ES6
-   * All methods and basic code of es6
-       * Array Methods 
-       * class
-       * loops -> for of loop
-       * promise
-       * set
-       * map
-       * structuring , destructuring
-       * interpolation
-       * string methods
+   * All methods and basic  of es6
+   * [Go to ES6 file](https://github.com/manish50kumar/Triweb_Learning/tree/master/ES6)   
 ### NodeJS 
    *  Basic code of nodejs 
    * some project using node js and learn how to flow of program
