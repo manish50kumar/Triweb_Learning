@@ -65,13 +65,10 @@
        * interpolation
        * string methods
 ### NodeJS 
-   * Implement Basic code of nodejs
-       * basic Calculator
-           * create a simple calculator to understand flow of nodeJs
-       * CURD MYSQL
-            * to perform curd operation using nodejs connect with Mysql and understand how to perform all functionality
-       * CURD Sequelize 
-            * Perform all CURD operation using nodejs with mySQL sequelize operation
+   *  Basic code of nodejs 
+   * some project using node js and learn how to flow of program
+   * learn , how to create route and manipulate data
+   * [Go to NodeJs file](https://github.com/manish50kumar/Triweb_Learning/tree/master/NodeJS%20I)       
 ### TypeScript 
    * basic code of typescript and understand how to work typescript 
        * how to create a route and how to connect routes for flow of code 
