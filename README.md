@@ -36,22 +36,10 @@
         * Build using react js 
    * [Go to project file](https://github.com/manish50kumar/Triweb_Learning/tree/master/projects)                          
 ### MYSQL
-   * mysql phpMyAdmin.txt
-   * mySQL_Workbench_task.sql
-   * implement all sql code
-       * create table
-       * Insert value
-       * select command
-       * update
-       * Order by
-       * SQL Aggregate Functions
+   * All the command of mysql is here 
    * [Go to mySQL file](https://github.com/manish50kumar/Triweb_Learning/tree/master/MySQL) 
 ### MongoDB
-   * implement all NoSql Commands
-       * create
-       * update
-       * delete
-       * fetch
+   *  all NoSql Commands       
    * [Go to MongoDB file](https://github.com/manish50kumar/Triweb_Learning/tree/master/MongoDB)    
 ### ES6
    * All methods and basic code of es6
