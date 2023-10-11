@@ -5,14 +5,24 @@ const About = () => {
               <div className="pb-8 ">
                   <p className="text-4xl font-bold inline border-b-4 border-gray-500">About</p>
               </div>
-              <p  className="text-xl mt-20 " >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quia culpa vitae, similique reprehenderit repellat harum? Ratione nostrum numquam at consequuntur soluta eum dolore, quos officiis odit optio ipsum similique doloremque placeat omnis. Laboriosam tenetur qui rem quae magnam. Dignissimos ducimus ratione deleniti consequuntur repellendus accusamus suscipit omnis saepe itaque totam quia delectus neque, nobis, assumenda ea laborum, maxime voluptatum!
-              </p>
+              <div className="mt-10 w-[70%] ml-20 shadow-md shadow-gray-600 rounded-lg hover:bg-gray-900">
+                  <h1 className="text-2xl text-center">Graphic Era University , Dehradun</h1>
+                  <p className="text-center">B.Tech ( Computer Science and Engineering )</p>
+                  <p className="text-center ">Session - 2020-2024 <span className="ml-4">CGPA - 8.91</span></p>
+              </div>
+              <div className="mt-10 w-[70%] ml-20 shadow-md shadow-gray-600 rounded-lg hover:bg-gray-900">
+                  <h1 className="text-2xl text-center">M. S. College , Motihari</h1>
+                  <p className="text-center">Intermidate ( 12th ) State Board ( BSEB )</p>
+                  <p className="text-center ">Session - 2017-2019 <span className="ml-4">Percentage - 83.4 %</span></p>
+              </div>
+              <div className="mt-10 w-[70%] ml-20 shadow-md shadow-gray-600 rounded-lg hover:bg-gray-900">
+                  <h1 className="text-2xl text-center">+2 High School Laxmipur Marjadwa</h1>
+                  <p className="text-center">High School ( 10th )  State Board ( BSEB )</p>
+                  <p className="text-center ">Session - 2016-2017 <span className="ml-4">Percentage - 80.0 %</span></p>
+              </div>
               
-              <br />
-
-              <p  className="text-xl">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti veniam quibusdam asperiores autem, mollitia corporis modi numquam adipisci saepe harum sed sunt qui optio inventore labore rerum quaerat rem ipsum voluptatum! Sequi ratione deserunt aliquid fugiat ducimus dolore inventore cumque aperiam sapiente iste. Itaque suscipit repellendus nisi vel, commodi minus?
-              </p>
+              
+              
 
           </div>
     </div>
