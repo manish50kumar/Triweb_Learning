@@ -1,16 +1,22 @@
-
+import MERN from '../assets/mern2.png'
 import html1 from '../assets/html.png'
-import html2 from '../assets/html.png'
-import html3 from '../assets/html.png'
-import html4 from '../assets/html.png'
-import html5 from '../assets/html.png'
-import html6 from '../assets/html.png'
-import html7 from '../assets/html.png'
+import css from '../assets/css.png'
+import js from '../assets/js.png'
+import react from '../assets/react.png'
+import tailwindcss1 from '../assets/tailwindcss1.png'
+import Node from '../assets/node.jpg'
+import Mysql from '../assets/mysql.png'
 
 
 const Experience = () => {
 
     const techs = [
+        {
+            id: 11,
+            src: MERN,
+            title: 'MERN',
+            style:'shadow-green-500'
+        },
         {
             id:1,
             src: html1,            
@@ -19,37 +25,37 @@ const Experience = () => {
         },
         {
             id:2,
-            src: html2,            
+            src: css,            
             title: 'CSS',
             style:'shadow-blue-500'
         },
         {
             id:3,
-            src: html3,            
+            src: js,            
             title: 'JavaScripts',
             style:'shadow-yellow-500'
         },
         {
             id:4,
-            src: html4,            
+            src: react,            
             title: 'React',
             style:'shadow-blue-600'
         },
         {
             id:5,
-            src: html5,            
+            src: tailwindcss1,            
             title: 'Tailwind CSS ',
             style:'shadow-sky-400'
         },
         {
             id:6,
-            src: html6,            
-            title: 'Express',
+            src: Node,            
+            title: 'NodeJs',
             style:'shadow-white'
         },
         {
             id:7,
-            src: html7,            
+            src: Mysql,            
             title: 'MySQL',
             style:'shadow-pink-400'
         },

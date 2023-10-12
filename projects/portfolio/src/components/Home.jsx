@@ -12,7 +12,12 @@ const Home = () => {
                         I'm a Full Stack Developer 
                     </h2>
                     <p className=" text-gray-500 py-4 max-w-md ">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium impedit, magnam dolores, veritatis similique adipisci illo repellat porro iusto quae ea maiores nihil est, placeat neque eos ullam distinctio harum repellendus nesciunt! Inventore, non. Soluta expedita nostrum itaque. Quas dolore ipsam a 
+                        I am a B.Tech. CSE student at Graphic Era University with expertise in Data Structure and Algorithms,
+                        Data Science, and MERN stack Development. Skilled in designing efficient algorithms and implementing
+                        them in various languages, I excel in problem-solving. 
+                        Additionally, I have hands-on experience in building dynamic web applications using the MERN stack.
+                        As a collaborative team player with excellent communication skills, I am eager to apply my knowledge
+                        and contribute to the tech industry. Open to new opportunities and collaborations.
                     </p>
 
                     <div>
